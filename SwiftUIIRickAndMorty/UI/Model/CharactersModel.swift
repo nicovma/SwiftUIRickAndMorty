@@ -19,7 +19,11 @@ struct CharactersInfoResponse: Decodable {
     var prev: String?
 }
 
-struct CharacterInformation: Decodable, Identifiable {
+struct CharacterInformation: Decodable, Identifiable, Equatable {
+    static func == (lhs: CharacterInformation, rhs: CharacterInformation) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id: Int
     var name: String
     var status: CharacterStatus

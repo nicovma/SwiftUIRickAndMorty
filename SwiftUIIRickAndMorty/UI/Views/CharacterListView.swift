@@ -16,24 +16,32 @@ struct CharacterListView: View {
                 LoadingView()
         } else if let message = viewModel.errorMessage  {
             ErrorView(errorMessage: message)
-        }else {
-            ScrollViewReader { scrollViewProxy in
-                NavigationView {
-                    List {
-                        ForEach(viewModel.filteredCharacters) { character in
-                            NavigationLink {
-                                Text(character.name + " Detail")
-                                    .foregroundColor(.gray)
-                            } label: {
+        } else {
+            NavigationView {
+                List {
+                    ForEach(viewModel.filteredCharacters) { character in
+                        NavigationLink {
+                            Text(character.name + " Detail")
+                                .foregroundColor(.gray)
+                        } label: {
+                            HStack{
+                                DownloadedImage(imageURL: character.image)
+                                    .frame(width: 200, height: 200)
+                                Spacer()
                                 Text(character.name)
                                     .foregroundColor(.gray)
+                                    .onAppear(perform: {
+                                        if character == viewModel.filteredCharacters.last {
+                                            viewModel.fetchMoreCharactersIfNeeded()
+                                        }
+                                    })
                             }
                         }
                     }
-                    .listStyle(PlainListStyle())
-                    .navigationTitle("Find your character")
-                    .searchable(text: $viewModel.searchText)
                 }
+                .listStyle(PlainListStyle())
+                .navigationTitle("Find your character")
+                .searchable(text: $viewModel.searchText)
             }
         }
     }

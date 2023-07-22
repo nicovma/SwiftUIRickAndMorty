@@ -15,7 +15,6 @@ struct ErrorView: View {
         VStack {
             Text("😿")
                 .font(.system(size: 80))
-            
             Text(errorMessage)
         }
     }

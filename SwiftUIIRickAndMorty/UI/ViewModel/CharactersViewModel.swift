@@ -13,7 +13,7 @@ class CharactersViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var searchText = ""
-    @Published var pageNumber = ""
+    private var pageNumber = 1
     
     // Used with searchText to filter character results
     var filteredCharacters: [CharacterInformation] {
@@ -24,20 +24,17 @@ class CharactersViewModel: ObservableObject {
     
     init(service: APIServiceProtocol = APIService()) {
         self.service = service
-        fetchAllCharacters()
+        fetchFirstCharacters()
     }
     
-    func fetchAllCharacters(page: String? = nil) {
+    func fetchFirstCharacters() {
         
         isLoading = true
         errorMessage = nil
         
-        // TODO: Add parameters to request
-        var urlString = "https://rickandmortyapi.com/api/character?page="
+        pageNumber = 1
         
-        if let page = page {
-            urlString += page
-        }
+        let urlString = "https://rickandmortyapi.com/api/character"
         
         let url = URL(string: urlString)
         service.fetch(CharactersResponse.self, url: url) { [unowned self] result in
@@ -46,7 +43,32 @@ class CharactersViewModel: ObservableObject {
                 switch result {
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
-                    // print(error.description)
+                    print(error)
+                case .success(let response):
+                    print("--- sucess with \(response.results.count)")
+                    self.characters = response.results
+                }
+            }
+        }
+    }
+    
+    func fetchMoreCharactersIfNeeded() {
+        
+        errorMessage = nil
+        
+        
+        // TODO: Add parameters to request
+        let urlString = "https://rickandmortyapi.com/api/character?page="
+        
+        pageNumber+=1
+        
+        let url = URL(string: urlString+String(pageNumber))
+        service.fetch(CharactersResponse.self, url: url) { [unowned self] result in
+            DispatchQueue.main.async {
+                self.isLoading = false
+                switch result {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
                     print(error)
                 case .success(let response):
                     print("--- sucess with \(response.results.count)")
