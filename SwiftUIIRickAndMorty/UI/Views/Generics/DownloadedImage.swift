@@ -12,7 +12,8 @@ struct DownloadedImage: View {
     @State private var image: UIImage? = nil
     @State private var isLoading = false
 
-    let imageURL: String // URL de la imagen que quieres descargar
+    let imageURL: String
+    let placeholder: String
 
     var body: some View {
         VStack {
@@ -24,12 +25,15 @@ struct DownloadedImage: View {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .cornerRadius(8)
+                        .padding(4)
                 } else {
-                    // TODO: Cambiar el placeholder
-                    Image(systemName: "photo")
+                    Image(systemName: placeholder)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(.gray)
+                        .cornerRadius(8)
+                        .padding(4)
                 }
             }
         }
@@ -61,6 +65,6 @@ struct DownloadedImage: View {
 
 struct DownloadedImage_Previews: PreviewProvider {
     static var previews: some View {
-        DownloadedImage(imageURL: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cmVzdGF1cmFudHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60")
+        DownloadedImage(imageURL: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cmVzdGF1cmFudHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60", placeholder: "person")
     }
 }
