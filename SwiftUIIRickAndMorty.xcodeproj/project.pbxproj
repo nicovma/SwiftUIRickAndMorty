@@ -12,6 +12,7 @@
 		4A06B0E82A6BFC09004E0CD4 /* DownloadedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06B0E72A6BFC09004E0CD4 /* DownloadedImage.swift */; };
 		4A06B0F12A6EEF8E004E0CD4 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06B0F02A6EEF8E004E0CD4 /* ViewModelProtocol.swift */; };
 		4A06B0F32A6EF754004E0CD4 /* CharacterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06B0F22A6EF754004E0CD4 /* CharacterRow.swift */; };
+		4A06B0F72A73C5C7004E0CD4 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06B0F62A73C5C7004E0CD4 /* TabsView.swift */; };
 		4A90BC812A6AB76C0057F187 /* SwiftUIIRickAndMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90BC802A6AB76C0057F187 /* SwiftUIIRickAndMortyApp.swift */; };
 		4A90BC832A6AB76C0057F187 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90BC822A6AB76C0057F187 /* ContentView.swift */; };
 		4A90BC852A6AB76E0057F187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A90BC842A6AB76E0057F187 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		4A06B0E72A6BFC09004E0CD4 /* DownloadedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedImage.swift; sourceTree = "<group>"; };
 		4A06B0F02A6EEF8E004E0CD4 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		4A06B0F22A6EF754004E0CD4 /* CharacterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRow.swift; sourceTree = "<group>"; };
+		4A06B0F62A73C5C7004E0CD4 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		4A90BC7D2A6AB76C0057F187 /* SwiftUIIRickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIIRickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A90BC802A6AB76C0057F187 /* SwiftUIIRickAndMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIIRickAndMortyApp.swift; sourceTree = "<group>"; };
 		4A90BC822A6AB76C0057F187 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				4A06B0E32A6AC334004E0CD4 /* LoadingView.swift */,
 				4A90BCB72A6ABE4D0057F187 /* ErrorView.swift */,
 				4A06B0E72A6BFC09004E0CD4 /* DownloadedImage.swift */,
+				4A06B0F62A73C5C7004E0CD4 /* TabsView.swift */,
 			);
 			path = Generics;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				4A90BCB52A6ABC4A0057F187 /* CharactersModel.swift in Sources */,
 				4A06B0F32A6EF754004E0CD4 /* CharacterRow.swift in Sources */,
 				4A06B0E82A6BFC09004E0CD4 /* DownloadedImage.swift in Sources */,
+				4A06B0F72A73C5C7004E0CD4 /* TabsView.swift in Sources */,
 				4A90BCB82A6ABE4D0057F187 /* ErrorView.swift in Sources */,
 				4A06B0F12A6EEF8E004E0CD4 /* ViewModelProtocol.swift in Sources */,
 				4A90BCB02A6AB8050057F187 /* APIServiceProtocol.swift in Sources */,
